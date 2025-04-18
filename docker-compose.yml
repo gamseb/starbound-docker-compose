@@ -1,0 +1,12 @@
+services:
+  starbound:
+    build: .
+    container_name: starbound-server
+    ports:
+      - "21025:21025/tcp"
+    volumes:
+      - ./starbound_1.4.4_linux:/home/starbound/starbound
+    working_dir: /home/starbound/starbound/linux
+    entrypoint: ["./starbound_server"]
+    stdin_open: true
+    tty: true
